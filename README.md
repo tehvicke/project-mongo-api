@@ -15,7 +15,6 @@ GET /avocado-sales
 - - end : higher end of date range in string format YYYY-MM-DD
 - optional filter params (either of these can be provided for better filtering):
 - - page : page number to return, if the resulting array is more than 10 objects. Defaults to 1 if no page is given, and to the last available page if the page doesn't exist
-start: mandatory - 
 - - average-price-min : lower end of average price range
 - - average-price-max : higher end of average price range
 - - total-volume-min : lower end of total volume range
