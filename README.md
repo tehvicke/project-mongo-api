@@ -24,7 +24,6 @@ region: region in string format
 
 Example working queries
 - https://project-mongo-api-vd.herokuapp.com/avocado-sales?start=2015-12-19&end=2015-12-28&average-price-min=1&average-price-max=2&page=3&region=Detroit&total-volume-max=253000
-- https://project-mongo-api-vd.herokuapp.com/
-/avocado-sales/5e3d4591dfbe6d00230f9161
+- https://project-mongo-api-vd.herokuapp.com/avocado-sales/5e3d4591dfbe6d00230f9161
 
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.

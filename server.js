@@ -131,7 +131,19 @@ app.get('/avocado-sales', async (req, res) => {
 })
 
 app.get('/avocado-sales/:id', async (req, res) => {
-  return res.json(await AvocadoSales.find({ _id: req.params.id }))
+  
+  try {
+    const result = await AvocadoSales.findOne({ _id: req.params.id })
+    if (result === null) {
+      throw 'error'
+    }
+    return res.json(result)
+  } catch {
+    return res.status(400).json({
+      status: 'failure',
+      message: 'Please provide a valid ID'
+    })
+  }
 })
 
 // Start the server
