@@ -19,7 +19,7 @@ GET /avocado-sales
 - - average-price-max : higher end of average price range
 - - total-volume-min : lower end of total volume range
 - - total-volume-max : higher end of total volume range
-region: region in string format
+- - region: region in string format
 
 GET /avocado-sales/:id
 - id is the unique mongoDB id of a specific object.
