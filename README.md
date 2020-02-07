@@ -22,6 +22,9 @@ start: mandatory -
 - - total-volume-max : higher end of total volume range
 region: region in string format
 
+GET /avocado-sales/:id
+- id is the unique mongoDB id of a specific object.
+
 Example working queries
 - https://project-mongo-api-vd.herokuapp.com/avocado-sales?start=2015-12-19&end=2015-12-28&average-price-min=1&average-price-max=2&page=3&region=Detroit&total-volume-max=253000
 - https://project-mongo-api-vd.herokuapp.com/avocado-sales/5e3d4591dfbe6d00230f9161
