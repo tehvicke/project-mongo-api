@@ -3,11 +3,8 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import mongoose from 'mongoose'
 
-const MAXPERPAGE = 10
+const MAXPERPAGE = 10 /* max results per page */
 
-// If you're using one of our datasets, uncomment the appropriate import below
-// to get started!
-// 
 // import goldenGlobesData from './data/golden-globes.json'
 import avocadoSalesData from './data/avocado-sales.json'
 // import booksData from './data/books.json'
@@ -21,7 +18,7 @@ mongoose.Promise = Promise
 
 const AvocadoSales = mongoose.model('AvocadoSales', {
   id: Number,
-  date: Date, /* Date is in string in json but is automatically converted */
+  date: Date, /* Date is in string in json but is automatically converted. Time is set to 00:00:00 however */
   totalVolume: Number,
   totalBagsSold: Number,
   smallBagsSold: Number,
