@@ -51,7 +51,7 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
-const queryBuilder = query => {
+const queryBuilder = (req, res) => {
   const {
     /* destructure the query params */
     start,
@@ -61,8 +61,7 @@ const queryBuilder = query => {
     'total-volume-min': totalVolumeMin,
     'total-volume-max': totalVolumeMax,
     region
-  } = query
-
+  } = req.query
   /* Error handling */
   if (start === undefined || end === undefined) {
     /* Ensure we get dates, send 400 error otherwise */
@@ -110,7 +109,7 @@ const queryBuilder = query => {
 app.get('/avocado-sales', async (req, res) => {
   let page = req.query.page || 1
 
-  const dbQuery = queryBuilder(req.query)
+  const dbQuery = queryBuilder(req, res)
 
   const numberOfPages = Math.ceil(
     (await AvocadoSales.countDocuments(dbQuery)) / MAXPERPAGE
